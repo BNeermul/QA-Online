@@ -16,30 +16,38 @@ public class Main {
         animalList.add(new Animal("kangaroo", 35));
         animalList.add(new Animal("hamster", 1));
 
+        // creating iterator object
+        Iterator<Animal> animalIter = animalList.iterator();
+
         // display message on console for better readability
         System.out.println("\nUnsorted\n");
 
         // print unsorted arrayList
-        for (Animal i : animalList) {
-            System.out.println(i);
+        // loop through arrayList using iterator
+        while (animalIter.hasNext()) {
+            System.out.println(animalIter.next());
         }
 
         // sort by animal name
         Collections.sort(animalList, new SortByName());
 
+        // reset pointer to beginning of the arrayList
+        animalIter = animalList.iterator();
+
         // display message on console for better readability
         System.out.println("\nSorted by name\n");
 
         // print sorted arrayList by name
-        for (Animal i : animalList) {
-            System.out.println(i);
+        // loop through arrayList using iterator
+        while (animalIter.hasNext()) {
+            System.out.println(animalIter.next());
         }
 
         // sort by animal weight
         Collections.sort(animalList, new SortByWeight());
 
-        // creating iterator object
-        Iterator<Animal> animalIter = animalList.iterator();
+        // reset pointer to beginning of the arrayList
+        animalIter = animalList.iterator();
 
         // display message on console for better readability
         System.out.println("\nSorted by weight\n");
