@@ -5,12 +5,15 @@ public class Animal {
         this.name = name;
         this.weight = weight;
     }
-
     public int getWeight() {
         return weight;
     }
-
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + this.getName() + ", " + this.getWeight() + "kg)";
     }
 }
